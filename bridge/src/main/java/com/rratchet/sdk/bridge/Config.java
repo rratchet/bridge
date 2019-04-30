@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * 文件名称：build.gradle
+ * 文件名称：Config.java
  * 文件描述：
  *
  * 创 建 人：ASLai(laijianhua@rratchet.com)
@@ -25,33 +25,36 @@
  * 修改备注：
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+package com.rratchet.sdk.bridge;
 
-buildscript { 
-    ext.kotlin_version = '1.3.11'
+/**
+ * <pre>
+ *
+ *      作 者 :        ASLai(laijianhua@rratchet.com).
+ *      日 期 :        2019/4/28
+ *      版 本 :        V1.0
+ *      描 述 :        description
+ *
+ *
+ * </pre>
+ *
+ * @author ASLai
+ */
+interface Config {
+
+    String RECEIVE_MESSAGE_METHOD = "onMessageHandle";
+
+    String PROTOCOL_SCHEME_NAME = "bridge";
+
+    String RETURN_RESULT_FORMAT = "{\"code\": %d, \"result\": \"%s\"}";
+
+    String KEY_CALLBACK_ID = "callbackId";
+
+    String KEY_RESPONSE_ID = "responseId";
+
+    String KEY_HANDLER_NAME = "handlerName";
+
+    String KEY_DATA = "data";
 
 
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" }
-}
-
-allprojects {
-//    apply plugin: 'me.tatarka.retrolambda'
-
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }

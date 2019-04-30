@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * 文件名称：build.gradle
+ * 文件名称：ExampleInstrumentedTest.java
  * 文件描述：
  *
  * 创 建 人：ASLai(laijianhua@rratchet.com)
@@ -25,33 +25,29 @@
  * 修改备注：
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+package com.rratchet.sdk.bridge;
 
-buildscript { 
-    ext.kotlin_version = '1.3.11'
+import android.content.Context;
+import android.support.test.InstrumentationRegistry;
+import android.support.test.runner.AndroidJUnit4;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-    repositories {
-        google()
-        jcenter()
+import static org.junit.Assert.*;
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ */
+@RunWith(AndroidJUnit4.class)
+public class ExampleInstrumentedTest {
+    @Test
+    public void useAppContext() {
+        // Context of the app under test.
+        Context appContext = InstrumentationRegistry.getTargetContext();
+
+        assertEquals("com.rratchet.sdk.bridge.test", appContext.getPackageName());
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" }
-}
-
-allprojects {
-//    apply plugin: 'me.tatarka.retrolambda'
-
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }
