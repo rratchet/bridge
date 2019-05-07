@@ -26,4 +26,4 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rratchet.sdk.bridge" />
+    package="com.rratchet.support.bridge" />
